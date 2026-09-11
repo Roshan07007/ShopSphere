@@ -221,189 +221,169 @@ export const HomePage = () => {
   return (
     <div className="space-y-28 pb-28 overflow-hidden">
       
-      {/* 1. CENTRAL 3D ORBIT HERO STAGE (COMPLETELY NEW CENTRAL COMPOSITION) */}
-      <section className="relative min-h-[90vh] flex flex-col items-center justify-center text-center overflow-hidden bg-slate-950 text-white pt-10 pb-20 px-4">
+      {/* 1. CENTRAL 3D ORBIT HERO STAGE (BALANCED & RESPONSIVE) */}
+      <section className="relative bg-slate-950 text-white pt-6 sm:pt-10 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         
-        {/* Layered Cyber Mesh Background */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.18)_0%,transparent_65%)] pointer-events-none" />
-        <div className="absolute -top-40 -left-40 w-96 h-96 bg-saffron-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_70%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20 pointer-events-none" />
+        {/* Layered Cyber Atmosphere (Rich & Subtle) */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(99,102,241,0.22),transparent_70%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_70%,rgba(168,85,247,0.12),transparent_80%)] pointer-events-none" />
+        <div className="absolute -top-32 -left-32 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_70%_50%_at_50%_45%,#000_70%,transparent_100%)] opacity-20 pointer-events-none" />
 
-        {/* Top Central Pill */}
-        <div className="relative z-20 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 backdrop-blur-xl text-xs font-bold shadow-2xl mb-6">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-slate-200">India 3D Shopping Universe</span>
-          <span className="px-2 py-0.2 rounded-full bg-gradient-to-r from-saffron-500 to-amber-500 text-slate-950 font-black text-[10px]">
-            ₹ INR CATALOG
-          </span>
-        </div>
-
-        {/* Central Headline */}
-        <div className="relative z-20 max-w-4xl mx-auto space-y-4 mb-8">
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[1.05]">
-            Discover Next-Gen Gear In <br />
-            <span className="text-gradient">Immersive 3D Space</span>
-          </h1>
-          <p className="text-sm sm:text-lg text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed">
-            Experience realistic perspective shopping tailored for India. Zero-fee Cash on Delivery, instant UPI payment, and express courier dispatch.
-          </p>
-        </div>
-
-        {/* CENTRAL 3D STAGE VISUALIZER */}
-        <div className="relative z-20 w-full max-w-5xl mx-auto my-6 perspective-1500">
+        {/* Max-Width 1200px Content Container */}
+        <div className="relative z-20 max-w-[1200px] mx-auto flex flex-col items-center text-center">
           
-          {/* Orbital Glowing Rings Base */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[540px] md:w-[680px] h-[340px] sm:h-[540px] md:h-[680px] rounded-full border border-primary-500/20 border-dashed animate-spin [animation-duration:40s] pointer-events-none" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[260px] sm:w-[420px] md:w-[520px] h-[260px] sm:h-[420px] md:h-[520px] rounded-full border border-accent-500/25 pointer-events-none" />
+          {/* Top Pill Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 backdrop-blur-xl text-xs font-bold shadow-lg mb-5">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-slate-200">India 3D Shopping Universe</span>
+            <span className="px-2 py-0.5 rounded-full bg-gradient-to-r from-primary-600 to-accent-600 text-white font-extrabold text-[10px] tracking-wide">
+              ₹ INR CATALOG
+            </span>
+          </div>
 
-          {/* Central Active Hero Card */}
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentOrbit.id}
-              initial={{ opacity: 0, scale: 0.85, rotateY: 15 }}
-              animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-              exit={{ opacity: 0, scale: 0.85, rotateY: -15 }}
-              transition={{ duration: 0.5, ease: 'easeOut' }}
-              className="relative mx-auto max-w-lg sm:max-w-xl preserve-3d"
+          {/* Central Headline */}
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[66px] font-black tracking-tight text-white leading-[1.06] sm:leading-[1.02] max-w-4xl mx-auto">
+            Discover Next-Gen Gear <br className="hidden sm:inline" />
+            in an <span className="text-gradient">Immersive 3D Space</span>
+          </h1>
+
+          {/* Subtitle */}
+          <p className="mt-4 mb-6 text-sm sm:text-base md:text-lg text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed">
+            Experience realistic perspective shopping tailored for India. Zero-fee Cash on Delivery, instant UPI payments, and express courier dispatch.
+          </p>
+
+          {/* Quick CTA Actions */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 w-full sm:w-auto">
+            <Link
+              to="/shop"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 sm:py-4 rounded-2xl bg-white text-slate-950 hover:bg-slate-100 font-black text-sm shadow-xl shadow-white/10 transition-all hover:scale-105 active:scale-95 group"
             >
-              <TiltCard maxTilt={12} scaleOnHover={1.02}>
-                <div className="relative rounded-3xl overflow-hidden bg-gradient-to-b from-slate-900/95 via-slate-900/80 to-slate-950/95 border border-slate-700/80 p-6 sm:p-8 shadow-2xl shadow-primary-500/20 backdrop-blur-2xl">
-                  
-                  {/* Top Product Badges */}
-                  <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="px-3 py-1 rounded-full bg-primary-500/20 border border-primary-500/40 text-primary-300 font-extrabold text-xs">
-                      {currentOrbit.tag}
-                    </span>
-                    <div className="flex items-center gap-1 text-amber-400 bg-black/40 px-2.5 py-1 rounded-full border border-white/10 text-xs font-bold">
-                      <Star className="w-3.5 h-3.5 fill-amber-400" />
-                      <span>{currentOrbit.rating}</span>
-                      <span className="text-slate-400 text-[10px]">({currentOrbit.reviews})</span>
-                    </div>
-                  </div>
+              <ShoppingBag className="w-4 h-4 text-primary-600" />
+              <span>Explore Catalog</span>
+              <ArrowRight className="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" />
+            </Link>
 
-                  {/* Central Product Image Canvas */}
-                  <div className="relative aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden bg-slate-950/60 p-4 flex items-center justify-center my-3 group">
-                    <img
-                      src={currentOrbit.image}
-                      alt={currentOrbit.title}
-                      className="max-h-full object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)] group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-700"
-                    />
-                  </div>
+            <Link
+              to="/categories"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 sm:py-4 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700/80 font-bold text-sm backdrop-blur-xl transition active:scale-95 hover:border-slate-600"
+            >
+              <Compass className="w-4 h-4 text-amber-400" />
+              <span>Browse Spheres</span>
+            </Link>
+          </div>
 
-                  {/* Product Details & Actions */}
-                  <div className="mt-4 pt-4 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
-                    <div>
-                      <span className="text-[10px] font-black uppercase tracking-widest text-primary-400">
-                        {currentOrbit.category}
+          {/* CENTRAL 3D STAGE VISUALIZER */}
+          <div className="relative w-full max-w-4xl mx-auto mb-6">
+            
+            {/* Orbital Glowing Rings Base */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[480px] md:w-[600px] h-[320px] sm:h-[480px] md:h-[600px] rounded-full border border-primary-500/20 border-dashed animate-spin [animation-duration:40s] pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] sm:w-[380px] md:w-[460px] h-[240px] sm:h-[380px] md:h-[460px] rounded-full border border-accent-500/20 pointer-events-none" />
+
+            {/* Central Active Hero Card */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentOrbit.id}
+                initial={{ opacity: 0, scale: 0.9, y: 15 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: -15 }}
+                transition={{ duration: 0.45, ease: 'easeOut' }}
+                className="relative mx-auto max-w-lg sm:max-w-xl"
+              >
+                <TiltCard maxTilt={10} scaleOnHover={1.02}>
+                  <div className="relative rounded-3xl overflow-hidden bg-gradient-to-b from-slate-900/95 via-slate-900/85 to-slate-950/95 border border-slate-700/80 p-5 sm:p-7 shadow-2xl shadow-primary-500/20 backdrop-blur-2xl text-left">
+                    
+                    {/* Top Product Badges */}
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <span className="px-3 py-1 rounded-full bg-primary-500/20 border border-primary-500/40 text-primary-300 font-extrabold text-xs">
+                        {currentOrbit.tag}
                       </span>
-                      <h3 className="text-lg sm:text-xl font-black text-white">
-                        {currentOrbit.title}
-                      </h3>
-                      <div className="flex items-baseline gap-2.5 mt-1">
-                        <span className="text-xl sm:text-2xl font-black text-emerald-400">
-                          {formatPrice(currentOrbit.price)}
-                        </span>
-                        <span className="line-through text-xs text-slate-400">
-                          {formatPrice(currentOrbit.originalPrice)}
-                        </span>
-                        <span className="px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-300 text-[10px] font-bold">
-                          {currentOrbit.discount}
-                        </span>
+                      <div className="flex items-center gap-1 text-amber-400 bg-black/40 px-2.5 py-1 rounded-full border border-white/10 text-xs font-bold">
+                        <Star className="w-3.5 h-3.5 fill-amber-400" />
+                        <span>{currentOrbit.rating}</span>
+                        <span className="text-slate-400 text-[10px]">({currentOrbit.reviews})</span>
                       </div>
                     </div>
 
-                    <Link
-                      to={currentOrbit.link}
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-500 hover:to-accent-500 text-white font-extrabold text-xs shadow-lg shadow-primary-500/30 transition active:scale-95 flex-shrink-0"
-                    >
-                      <span>Explore In 3D</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </div>
-
-                </div>
-              </TiltCard>
-            </motion.div>
-          </AnimatePresence>
-
-          {/* SATELLITE FLOATING PODS (SURROUNDING AT DIFFERENT DEPTHS) */}
-          <div className="hidden lg:block absolute inset-0 pointer-events-none">
-            {ORBIT_SHOWCASE_PRODUCTS.map((item, idx) => {
-              if (idx === activeOrbitIndex) return null;
-              const positions = [
-                'top-0 -left-20 translate-z-30',
-                'top-0 -right-20 translate-z-20',
-                'bottom-10 -left-16 translate-z-40',
-                'bottom-10 -right-16 translate-z-30'
-              ];
-              const posClass = positions[idx % positions.length];
-
-              return (
-                <div
-                  key={item.id}
-                  onClick={() => setActiveOrbitIndex(idx)}
-                  className={`pointer-events-auto absolute ${posClass} w-52 p-3 rounded-2xl bg-slate-900/90 border border-slate-700/80 shadow-2xl backdrop-blur-xl hover:scale-105 transition cursor-pointer group text-left animate-float-slow`}
-                >
-                  <div className="flex items-center gap-3">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-12 h-12 object-cover rounded-xl bg-slate-800"
-                    />
-                    <div className="min-w-0">
-                      <p className="text-[10px] font-bold text-primary-400 uppercase truncate">
-                        {item.category}
-                      </p>
-                      <h4 className="text-xs font-black text-white truncate group-hover:text-primary-400 transition">
-                        {item.title}
-                      </h4>
-                      <span className="text-xs font-bold text-emerald-400">
-                        {formatPrice(item.price)}
-                      </span>
+                    {/* Central Product Image Canvas */}
+                    <div className="relative aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden bg-slate-950/60 p-4 flex items-center justify-center my-2 group">
+                      <img
+                        src={currentOrbit.image}
+                        alt={currentOrbit.title}
+                        className="max-h-full object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)] group-hover:scale-105 group-hover:-translate-y-1 transition-transform duration-500"
+                      />
                     </div>
+
+                    {/* Product Details & Actions */}
+                    <div className="mt-3 pt-3 border-t border-slate-800/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-left">
+                      <div className="min-w-0">
+                        <span className="text-[10px] font-black uppercase tracking-widest text-primary-400">
+                          {currentOrbit.category}
+                        </span>
+                        <h3 className="text-lg sm:text-xl font-black text-white truncate">
+                          {currentOrbit.title}
+                        </h3>
+                        <div className="flex items-baseline gap-2 mt-0.5">
+                          <span className="text-xl sm:text-2xl font-black text-emerald-400">
+                            {formatPrice(currentOrbit.price)}
+                          </span>
+                          <span className="line-through text-xs text-slate-400">
+                            {formatPrice(currentOrbit.originalPrice)}
+                          </span>
+                          <span className="px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-300 text-[10px] font-bold">
+                            {currentOrbit.discount}
+                          </span>
+                        </div>
+                      </div>
+
+                      <Link
+                        to={currentOrbit.link}
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-500 hover:to-accent-500 text-white font-extrabold text-xs shadow-lg shadow-primary-500/30 transition active:scale-95 flex-shrink-0"
+                      >
+                        <span>Explore In 3D</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+
                   </div>
-                </div>
-              );
-            })}
+                </TiltCard>
+              </motion.div>
+            </AnimatePresence>
+
           </div>
-        </div>
 
-        {/* Orbit Radial Selector Controls */}
-        <div className="relative z-20 flex items-center justify-center gap-2 mt-4">
-          {ORBIT_SHOWCASE_PRODUCTS.map((item, idx) => (
-            <button
-              key={item.id}
-              onClick={() => setActiveOrbitIndex(idx)}
-              className={`px-4 py-2 rounded-full text-xs font-bold transition-all duration-300 flex items-center gap-2 ${
-                activeOrbitIndex === idx
-                  ? 'bg-primary-600 text-white shadow-lg shadow-primary-500/40 scale-105'
-                  : 'bg-slate-900/80 text-slate-400 hover:text-white border border-slate-800 hover:bg-slate-800'
-              }`}
-            >
-              <span className={`w-2 h-2 rounded-full ${activeOrbitIndex === idx ? 'bg-white' : 'bg-slate-600'}`} />
-              <span className="hidden sm:inline">{item.title.split(' ')[0]}</span>
-            </button>
-          ))}
-        </div>
+          {/* Orbit Radial Selector Controls */}
+          <div className="flex flex-wrap items-center justify-center gap-2 mt-2 mb-6">
+            {ORBIT_SHOWCASE_PRODUCTS.map((item, idx) => (
+              <button
+                key={item.id}
+                onClick={() => setActiveOrbitIndex(idx)}
+                className={`px-3.5 sm:px-4 py-2 rounded-full text-xs font-bold transition-all duration-300 flex items-center gap-2 ${
+                  activeOrbitIndex === idx
+                    ? 'bg-primary-600 text-white shadow-lg shadow-primary-500/40 scale-105'
+                    : 'bg-slate-900/80 text-slate-400 hover:text-white border border-slate-800 hover:bg-slate-800'
+                }`}
+              >
+                <span className={`w-2 h-2 rounded-full ${activeOrbitIndex === idx ? 'bg-white' : 'bg-slate-600'}`} />
+                <span>{item.title.split(' ').slice(0, 2).join(' ')}</span>
+              </button>
+            ))}
+          </div>
 
-        {/* Quick CTA Actions */}
-        <div className="relative z-20 flex flex-col sm:flex-row items-center gap-4 mt-8">
-          <Link
-            to="/shop"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-2xl bg-white text-slate-950 hover:bg-slate-100 font-black text-sm shadow-2xl transition hover:scale-105 active:scale-95"
-          >
-            <ShoppingBag className="w-4 h-4 text-primary-600" />
-            <span>Enter Shop Catalog</span>
-          </Link>
+          {/* Trust Guarantees Bar */}
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-slate-400 pt-4 border-t border-slate-800/80 max-w-2xl">
+            <span className="flex items-center gap-1.5">
+              <Truck className="w-4 h-4 text-primary-400" /> Free Shipping on ₹999+
+            </span>
+            <span className="flex items-center gap-1.5">
+              <ShieldCheck className="w-4 h-4 text-emerald-400" /> 100% Authentic Indian Stock
+            </span>
+            <span className="flex items-center gap-1.5">
+              <RotateCcw className="w-4 h-4 text-amber-400" /> 7-Day Easy Returns
+            </span>
+          </div>
 
-          <Link
-            to="/categories"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700 font-bold text-sm backdrop-blur-xl transition active:scale-95"
-          >
-            <Compass className="w-4 h-4 text-amber-400" />
-            <span>Browse Spheres</span>
-          </Link>
         </div>
 
       </section>
