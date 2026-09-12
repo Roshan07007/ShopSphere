@@ -1,7 +1,23 @@
 import axios from 'axios';
 
+// Determine and normalize API Base URL
+const rawBaseURL =
+  import.meta.env.VITE_API_BASE_URL ||
+  import.meta.env.VITE_API_URL ||
+  '/api';
+
+const getNormalizedBaseURL = (url) => {
+  if (!url) return '/api';
+  let cleaned = url.trim().replace(/\/+$/, '');
+  // If it's an absolute URL without /api at the end, append /api
+  if (/^https?:\/\//i.test(cleaned) && !cleaned.endsWith('/api')) {
+    cleaned += '/api';
+  }
+  return cleaned;
+};
+
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: getNormalizedBaseURL(rawBaseURL),
   headers: {
     'Content-Type': 'application/json'
   }
@@ -25,8 +41,9 @@ api.interceptors.response.use(
   (error) => {
     const message =
       error.response?.data?.message ||
+      error.response?.data?.error ||
       error.message ||
-      'An unexpected error occurred. Please try again.';
+      'An unexpected network or server error occurred. Please try again.';
     return Promise.reject(new Error(message));
   }
 );
